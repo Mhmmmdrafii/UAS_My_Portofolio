@@ -198,14 +198,14 @@
     </script>
 
 <script>
-
-  document.getElementById('visitorName').addEventListener('input', function() {
-      const nameInput = this.value.trim(); 
+    document.getElementById('visitorName').addEventListener('input', function() {
+      const nameInput = this.value.trim();
       const nextPageButton = document.getElementById('nextPageButton');
       
       if (nameInput.length > 0) {
           nextPageButton.classList.remove('d-none'); 
-          nextPageButton.classList.add('d-none'); 
+      } else {
+          nextPageButton.classList.add('d-none');
       }
   });
 
@@ -213,7 +213,6 @@
     const visitorName = document.getElementById('visitorName').value.trim();
     localStorage.setItem('visitorName', visitorName); 
 
-    // Animasi fade-out menggunakan GSAP
     gsap.to("body", {
         duration: 0.5,
         opacity: 0,
